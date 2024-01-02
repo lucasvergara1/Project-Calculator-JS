@@ -419,6 +419,12 @@ class CalcController {
 
     // Setter para o elemento de exibição do resultado da calculadora
     set displayCalc(value){
+
+        if(value.toString().length > 10) {
+            this.setError();
+            return false;
+        }
+
         this._displayCalcEl.innerHTML = value;
     }
 
